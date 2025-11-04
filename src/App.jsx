@@ -1,12 +1,12 @@
-import React from 'react'
+import React from "react";
 
 const social = [
-  {label:'LinkedIn', href:'https://www.linkedin.com/in/vaibhav-varshney-vv/'},
-  {label:'GitHub', href:'https://github.com/VaibhaVarshney'},
-  {label:'Old Portfolio', href:'https://varshney2vaibhav.carrd.co/'},
-]
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/vaibhav-varshney-vv/" },
+  { label: "GitHub", href: "https://github.com/VaibhaVarshney" },
+  { label: "Old Portfolio", href: "https://varshney2vaibhav.carrd.co/" },
+];
 
-export default function App(){
+export default function App() {
   return (
     <div className="min-h-screen flex items-center justify-center px-6 py-12 bg-gradient-to-b from-slate-50 to-white">
       <div className="max-w-4xl w-full grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -20,13 +20,17 @@ export default function App(){
               </div>
             </div>
 
-            <p className="mt-4 text-sm text-slate-700">I'm a data scientist & ML practitioner currently at the University of Maryland (MS Data Science). I build predictive models, deploy ML products, and convert data into actionable insights. Interested in ML systems, DevOps for ML, and applied research.</p>
+            <p className="mt-4 text-sm text-slate-700">
+              I'm a data scientist & ML practitioner currently at the University of Maryland (MS Data Science). I build predictive models, deploy ML products, and convert data into actionable insights. Interested in ML systems, DevOps for ML, and applied research.
+            </p>
 
             <div className="mt-4 space-y-2">
               <a className="inline-block text-sm font-medium" href="mailto:varshney2vaibhav@gmail.com">varshney2vaibhav@gmail.com</a>
               <div className="flex gap-3 mt-2">
-                {social.map(s=> (
-                  <a key={s.label} href={s.href} className="text-xs rounded-full px-3 py-1 border border-slate-200 hover:bg-slate-50">{s.label}</a>
+                {social.map((s) => (
+                  <a key={s.label} href={s.href} className="text-xs rounded-full px-3 py-1 border border-slate-200 hover:bg-slate-50">
+                    {s.label}
+                  </a>
                 ))}
               </div>
             </div>
@@ -57,19 +61,29 @@ export default function App(){
               <ProjectCard
                 title="Plant Disease Detection"
                 period="Mar 2024 - Apr 2024"
-                bullets=['Led a team of 4 and improved the dataset to 70k+ images for multiple crops.', 'Built CNN models (transfer learning) with 97% accuracy; used augmentation and evaluated with confusion matrices.', 'Deployed a Streamlit demo to showcase predictions to stakeholders and farmers.']
+                bullets={[
+                  "Led a team of 4 and improved the dataset to 70k+ images for multiple crops.",
+                  "Built CNN models (transfer learning) with 97% accuracy; used augmentation and evaluated with confusion matrices.",
+                  "Deployed a Streamlit demo to showcase predictions to stakeholders and farmers.",
+                ]}
               />
 
               <ProjectCard
                 title="Heart Failure Prediction"
                 period="Jul 2023 - Aug 2023"
-                bullets=['Built and compared models (SVM, Random Forest, XGBoost) using clinical features.', 'Achieved 86.4% accuracy with SVM and explored feature importance and ROC curves.']
+                bullets={[
+                  "Built and compared models (SVM, Random Forest, XGBoost) using clinical features.",
+                  "Achieved 86.4% accuracy with SVM and explored feature importance and ROC curves.",
+                ]}
               />
 
               <ProjectCard
                 title="ERP & CRM Customization — Mavio Solutions"
                 period="Aug 2023 – Dec 2023"
-                bullets=['Customized ERPNext with Frappe; handled data import/cleaning for 10k+ client assets.', 'Built Salesforce automation routines to improve customer workflows.']
+                bullets={[
+                  "Customized ERPNext with Frappe; handled data import/cleaning for 10k+ client assets.",
+                  "Built Salesforce automation routines to improve customer workflows.",
+                ]}
               />
             </div>
           </section>
@@ -107,10 +121,10 @@ export default function App(){
             <h2 className="text-lg font-bold">Recommendations</h2>
             <p className="text-sm text-slate-700 mt-2">Below are recommendation letters and my resume.</p>
             <div className="mt-3 flex flex-wrap gap-3">
-              <a className="px-4 py-2 rounded-full border" href="/Vaibhav Varshney Resume.pdf" target="_blank">Resume</a>
-              <a className="px-4 py-2 rounded-full border" href="/LOR_1.pdf" target="_blank">LOR — Dr. Pradnya Kulkarni</a>
-              <a className="px-4 py-2 rounded-full border" href="/LOR_2.pdf" target="_blank">LOR — Ms. Anita Gunjal</a>
-              <a className="px-4 py-2 rounded-full border" href="/LOR_3.pdf" target="_blank">LOR — Ms. Ketaki Kulkarni</a>
+              <a className="px-4 py-2 rounded-full border" href="/Vaibhav Varshney Resume.pdf" target="_blank" rel="noreferrer">Resume</a>
+              <a className="px-4 py-2 rounded-full border" href="/LOR_1.pdf" target="_blank" rel="noreferrer">LOR — Dr. Pradnya Kulkarni</a>
+              <a className="px-4 py-2 rounded-full border" href="/LOR_2.pdf" target="_blank" rel="noreferrer">LOR — Ms. Anita Gunjal</a>
+              <a className="px-4 py-2 rounded-full border" href="/LOR_3.pdf" target="_blank" rel="noreferrer">LOR — Ms. Ketaki Kulkarni</a>
             </div>
           </section>
 
@@ -122,10 +136,10 @@ export default function App(){
         </main>
       </div>
     </div>
-  )
+  );
 }
 
-function ProjectCard({title, period, bullets}){
+function ProjectCard({ title, period, bullets }) {
   return (
     <article className="p-4 rounded-lg border border-slate-100 bg-white">
       <div className="flex justify-between items-start">
@@ -133,8 +147,10 @@ function ProjectCard({title, period, bullets}){
         <span className="text-xs text-slate-500">{period}</span>
       </div>
       <ul className="mt-2 text-sm text-slate-700 list-disc pl-4 space-y-1">
-        {bullets.map((b,i)=>(<li key={i}>{b}</li>))}
+        {bullets.map((b, i) => (
+          <li key={i}>{b}</li>
+        ))}
       </ul>
     </article>
-  )
+  );
 }
