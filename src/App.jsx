@@ -8,36 +8,54 @@ const social = [
 
 export default function App() {
   return (
-    <div className="min-h-screen flex items-center justify-center px-6 py-12 bg-gradient-to-b from-slate-50 to-white">
-      <div className="max-w-4xl w-full grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div className="min-h-screen py-12">
+      <div className="page-container grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+        {/* LEFT COLUMN */}
         <aside className="md:col-span-1">
           <div className="card">
-            <div className="flex items-center gap-4">
-              <img src="/profile.jpg" alt="Vaibhav" className="w-20 h-20 rounded-full object-cover" />
+            <div className="flex items-start gap-4">
+              <img
+                src="/profile.jpg"
+                alt="Vaibhav"
+                className="w-20 h-20 rounded-full object-cover border border-slate-100"
+              />
               <div>
-                <h1 className="text-xl font-bold">Vaibhav Varshney</h1>
-                <p className="text-sm text-slate-500">MS in Data Science • Machine Learning & DevOps</p>
+                <h1 className="text-2xl font-bold leading-tight">
+                  Vaibhav <br />
+                  <span className="text-accent font-semibold">Varshney</span>
+                </h1>
+                <p className="text-sm text-slate-500 mt-1">
+                  MS in Data Science • Machine Learning &amp; DevOps
+                </p>
               </div>
             </div>
 
-            <p className="mt-4 text-sm text-slate-700">
-              I'm a data scientist & ML practitioner currently at the University of Maryland (MS Data Science). I build predictive models, deploy ML products, and convert data into actionable insights. Interested in ML systems, DevOps for ML, and applied research.
+            <p className="mt-4 text-sm text-slate-700 leading-relaxed">
+              I'm a data scientist & ML practitioner currently at the University of Maryland (MS Data
+              Science). I build predictive models, deploy ML products, and convert data into actionable
+              insights. Interested in ML systems, DevOps for ML, and applied research.
             </p>
 
-            <div className="mt-4 space-y-2">
-              <a className="inline-block text-sm font-medium" href="mailto:varshney2vaibhav@gmail.com">varshney2vaibhav@gmail.com</a>
-              <div className="flex gap-3 mt-2">
+            <div className="mt-4 space-y-3">
+              <a
+                className="inline-block text-sm font-medium"
+                href="mailto:varshney2vaibhav@gmail.com"
+              >
+                varshney2vaibhav@gmail.com
+              </a>
+
+              <div className="flex flex-wrap gap-3">
                 {social.map((s) => (
-                  <a key={s.label} href={s.href} className="text-xs rounded-full px-3 py-1 border border-slate-200 hover:bg-slate-50">
+                  <a key={s.label} href={s.href} className="pill hover:bg-slate-50">
                     {s.label}
                   </a>
                 ))}
               </div>
             </div>
 
-            <div className="mt-6">
-              <h3 className="text-sm font-semibold text-slate-600">Quick facts</h3>
-              <ul className="mt-2 text-sm text-slate-700 space-y-1">
+            <div className="mt-6 pt-4 border-t border-slate-100">
+              <h4 className="text-sm font-semibold text-slate-600">Quick facts</h4>
+              <ul className="mt-3 text-sm text-slate-700 space-y-1">
                 <li>University of Maryland — MS Data Science (Aug 2025 - Present)</li>
                 <li>B.Tech in CSE — Dr. Vishwanath Karad MIT WPU (2020–2024)</li>
                 <li>Tech: Python, TensorFlow, PyTorch, AWS, SQL, PowerBI</li>
@@ -48,14 +66,20 @@ export default function App() {
           <div className="card mt-6">
             <h3 className="font-semibold">Contact</h3>
             <p className="mt-2 text-sm">Phone: +1 (240) 960-6762</p>
-            <a className="mt-2 inline-block text-sm" href="/Vaibhav Varshney Resume.pdf">Download Resume</a>
+            <a className="mt-2 inline-block text-sm" href="/Vaibhav Varshney Resume.pdf" target="_blank" rel="noreferrer">
+              Download Resume
+            </a>
           </div>
         </aside>
 
+        {/* RIGHT COLUMN */}
         <main className="md:col-span-2 space-y-6">
+          {/* Projects */}
           <section className="card">
             <h2 className="text-lg font-bold">Selected Projects</h2>
-            <p className="text-sm text-slate-600 mt-1">Projects that demonstrate applied ML, deployment, and data engineering.</p>
+            <p className="text-sm text-slate-600 mt-1">
+              Projects that demonstrate applied ML, deployment, and data engineering.
+            </p>
 
             <div className="mt-4 space-y-4">
               <ProjectCard
@@ -88,8 +112,9 @@ export default function App() {
             </div>
           </section>
 
+          {/* Education */}
           <section className="card">
-            <h2 className="text-lg font-bold">Education & Certifications</h2>
+            <h2 className="text-lg font-bold">Education &amp; Certifications</h2>
             <div className="mt-3 grid gap-3">
               <div>
                 <div className="text-sm font-semibold">University of Maryland, College Park</div>
@@ -98,40 +123,60 @@ export default function App() {
 
               <div>
                 <div className="text-sm font-semibold">Dr. Vishwanath Karad MIT WPU</div>
-                <div className="text-xs text-slate-600">B.Tech, Computer Science — Jul 2020 - May 2024 • CGPA 8.59/10</div>
+                <div className="text-xs text-slate-600">
+                  B.Tech, Computer Science — Jul 2020 - May 2024 • CGPA 8.59/10
+                </div>
               </div>
 
               <div className="pt-2 border-t border-slate-100">
                 <h4 className="text-sm font-semibold">Selected Certifications</h4>
                 <ul className="text-sm mt-2 text-slate-700 space-y-1">
-                  <li>Data Science Fundamentals with Python & SQL — IBM</li>
-                  <li>Python for Data Science, AI & Dev — IBM</li>
+                  <li>Data Science Fundamentals with Python &amp; SQL — IBM</li>
+                  <li>Python for Data Science, AI &amp; Dev — IBM</li>
                   <li>Statistics for Data Science — IBM</li>
                 </ul>
               </div>
             </div>
           </section>
 
+          {/* Publications */}
           <section className="card">
-            <h2 className="text-lg font-bold">Publications & Presentations</h2>
-            <p className="text-sm text-slate-700 mt-2">Paper: "Advancements in Plant Disease Detection Technologies" — YMER. Poster on SimCLR and self-supervised learning.</p>
+            <h2 className="text-lg font-bold">Publications &amp; Presentations</h2>
+            <p className="text-sm text-slate-700 mt-2">
+              Paper: "Advancements in Plant Disease Detection Technologies" — YMER. Poster on SimCLR and
+              self-supervised learning.
+            </p>
           </section>
 
+          {/* Recommendations */}
           <section className="card">
             <h2 className="text-lg font-bold">Recommendations</h2>
             <p className="text-sm text-slate-700 mt-2">Below are recommendation letters and my resume.</p>
             <div className="mt-3 flex flex-wrap gap-3">
-              <a className="px-4 py-2 rounded-full border" href="/Vaibhav Varshney Resume.pdf" target="_blank" rel="noreferrer">Resume</a>
-              <a className="px-4 py-2 rounded-full border" href="/LOR_1.pdf" target="_blank" rel="noreferrer">LOR — Dr. Pradnya Kulkarni</a>
-              <a className="px-4 py-2 rounded-full border" href="/LOR_2.pdf" target="_blank" rel="noreferrer">LOR — Ms. Anita Gunjal</a>
-              <a className="px-4 py-2 rounded-full border" href="/LOR_3.pdf" target="_blank" rel="noreferrer">LOR — Ms. Ketaki Kulkarni</a>
+              <a className="pill hover:bg-slate-50" href="/Vaibhav Varshney Resume.pdf" target="_blank" rel="noreferrer">
+                Resume
+              </a>
+              <a className="pill hover:bg-slate-50" href="/LOR_1.pdf" target="_blank" rel="noreferrer">
+                LOR — Dr. Pradnya Kulkarni
+              </a>
+              <a className="pill hover:bg-slate-50" href="/LOR_2.pdf" target="_blank" rel="noreferrer">
+                LOR — Ms. Anita Gunjal
+              </a>
+              <a className="pill hover:bg-slate-50" href="/LOR_3.pdf" target="_blank" rel="noreferrer">
+                LOR — Ms. Ketaki Kulkarni
+              </a>
             </div>
           </section>
 
+          {/* Contact CTA */}
           <section className="card">
             <h2 className="text-lg font-bold">Get in touch</h2>
-            <p className="text-sm text-slate-700 mt-2">Interested in collaborations or ML/DevOps roles. I’m open to internships and research opportunities.</p>
-            <a className="mt-3 inline-block" href="mailto:varshney2vaibhav@gmail.com">Say hello</a>
+            <p className="text-sm text-slate-700 mt-2">
+              Interested in collaborations or ML/DevOps roles. I’m open to internships and research opportunities.
+            </p>
+            <a className="mt-3 inline-block pill hover:bg-slate-50" href="mailto:varshney2vaibhav@gmail.com">
+              Say hello
+            </a>
           </section>
         </main>
       </div>
@@ -141,12 +186,12 @@ export default function App() {
 
 function ProjectCard({ title, period, bullets }) {
   return (
-    <article className="p-4 rounded-lg border border-slate-100 bg-white">
+    <article className="project-card">
       <div className="flex justify-between items-start">
         <h3 className="text-sm font-semibold">{title}</h3>
         <span className="text-xs text-slate-500">{period}</span>
       </div>
-      <ul className="mt-2 text-sm text-slate-700 list-disc pl-4 space-y-1">
+      <ul className="mt-3 text-sm text-slate-700 list-disc pl-5 space-y-1">
         {bullets.map((b, i) => (
           <li key={i}>{b}</li>
         ))}
